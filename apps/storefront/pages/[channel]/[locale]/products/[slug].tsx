@@ -9,6 +9,7 @@ import { useIntl } from "react-intl";
 
 import { Layout, RichText, VariantSelector } from "@/components";
 import { AttributeDetails } from "@/components/product/AttributeDetails";
+import { ShortDescription } from "@/components/product/ShortDescription";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { useRegions } from "@/components/RegionsProvider";
 import { ProductPageSeo } from "@/components/seo/ProductPageSeo";
@@ -178,6 +179,7 @@ function ProductPage({ product }: InferGetStaticPropsType<typeof getStaticProps>
             >
               {translate(product, "name")}
             </h1>
+            <ShortDescription product={product} />
             {shouldDisplayPrice && (
               <h2 className="text-xl font-bold tracking-tight text-gray-800">
                 {formatPrice(price)}
